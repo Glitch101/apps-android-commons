@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.github.chrisbanes.photoview.PhotoView;
 import com.jakewharton.rxbinding2.widget.RxTextView;
 
+import fr.free.nrw.commons.SelectLangDialog;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
@@ -79,6 +80,8 @@ public class UploadMediaDetailFragment extends UploadBaseFragment implements
     AppCompatButton btnNext;
     @BindView(R.id.btn_previous)
     AppCompatButton btnPrevious;
+    @BindView(R.id.open_dialog_button)
+    AppCompatButton openDialogButton;
     private DescriptionsAdapter descriptionsAdapter;
     @BindView(R.id.btn_copy_prev_title_desc)
     AppCompatButton btnCopyPreviousTitleDesc;
@@ -264,6 +267,13 @@ public class UploadMediaDetailFragment extends UploadBaseFragment implements
         Description description = new Description();
         description.setManuallyAdded(true);//This was manually added by the user
         descriptionsAdapter.addDescription(description);
+    }
+
+    @OnClick(R.id.open_dialog_button)
+    public void openDialog() {
+        // TODO: Show custom search language dialog
+        SelectLangDialog dialog = new SelectLangDialog();
+        dialog.show(getFragmentManager(), "language");
     }
 
     @Override
