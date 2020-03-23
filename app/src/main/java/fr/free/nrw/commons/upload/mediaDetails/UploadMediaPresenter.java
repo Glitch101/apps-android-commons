@@ -1,5 +1,6 @@
 package fr.free.nrw.commons.upload.mediaDetails;
 
+import androidx.recyclerview.widget.RecyclerView;
 import java.lang.reflect.Proxy;
 
 import javax.inject.Inject;

@@ -15,6 +15,11 @@ import fr.free.nrw.commons.upload.SpinnerLanguagesAdapter;
 
 public class SelectLangDialog extends DialogFragment {
   String[] languages = {"a", "b", "c", "d", "a", "b", "c", "d", "a", "b", "c", "d", "a", "b", "c", "d", "a", "b", "c", "d"};
+  String[] myDataset = {"br", "en", "df", "dd", "br", "en", "df", "dd", "br", "en", "df", "dd", "br", "en", "df", "dd"};
+  private RecyclerView.Adapter mAdapter;
+  private RecyclerView.LayoutManager layoutManager;
+
+
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
     // Use the builder class for convenient dialog construction.
@@ -23,6 +28,7 @@ public class SelectLangDialog extends DialogFragment {
 
     builder.setView(inflater.inflate(R.layout.language_dialog, null))
         .setTitle("Select language for description");
+
 
     return builder.create();
   }
